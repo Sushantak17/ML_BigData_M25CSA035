@@ -2,3 +2,4 @@ D184MB/
 *.txt
 *.log
 __pycache__/
+.DS_Store
