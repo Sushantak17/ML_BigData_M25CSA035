@@ -1,50 +1,68 @@
-# Machine Learning with Big Data – Assignment 1
+# Machine Learning with Big Data — Assignment 1
 
-**Student:** Sushantak Parashar Jha  
-**Roll No:** M25CSA035  
+Student Name: Sushantak Parashar Jha  
+Roll Number: M25CSA035  
+Course: Machine Learning with Big Data  
+Assignment: Hadoop MapReduce and Spark Processing
 
----
+--------------------------------------------------
 
-## Assignment Overview
-This assignment demonstrates the implementation of Hadoop MapReduce and Apache Spark programs for large-scale data processing.
+## Overview
+This repository contains the implementation and experimental results for Assignment-1, which focuses on large-scale text processing using Apache Hadoop MapReduce and Apache Spark.
 
-The work includes:
-
+The assignment demonstrates:
 - Hadoop WordCount MapReduce execution
-- Data upload and processing in HDFS
-- Performance measurement using input split configuration
-- Metadata extraction and analysis using Spark
-- TF-IDF computation and cosine similarity between books
-- Construction of an Author Influence Network using Spark
+- HDFS data handling
+- Execution time analysis
+- Metadata extraction from large text collections
+- TF-IDF computation using Spark
+- Book similarity analysis using cosine similarity
+- Author influence network construction
 
----
+--------------------------------------------------
 
 ## Repository Structure
+WordCount.java  
+M25CSA035_CSL7110_Assignment.pdf  
 
-| File | Description |
-|------|-------------|
-| WordCount.java | Hadoop MapReduce WordCount implementation |
-| spark_code.scala | Spark program for metadata extraction, TF-IDF, similarity and influence network |
-| M25CSA035_CSL7110 _ Assignment.pdf| Detailed Report|
-| README.md | Assignment overview  |
+spark_pyspark/
+    q10_metadata_extraction.py  
+    q11_tfidf_similarity.py  
+    q12_author_influence.py  
 
----
+--------------------------------------------------
 
 ## Technologies Used
-
-- Apache Hadoop
-- Apache Spark
+- Apache Hadoop (HDFS, MapReduce)
+- Apache Spark (PySpark)
+- Python
 - Java
-- Pyspark
 
----
+--------------------------------------------------
 
-## Execution Environment
+## Execution
 
-Single-node Hadoop cluster and local Apache Spark installation were used for executing the programs.
+### Hadoop WordCount
+Compile:
+javac -classpath `hadoop classpath` WordCount.java  
+jar cf wordcount.jar WordCount*.class  
 
----
+Run:
+hadoop jar wordcount.jar WordCount input output  
+
+### Spark Programs
+spark-submit spark_pyspark/q10_metadata_extraction.py  
+spark-submit spark_pyspark/q11_tfidf_similarity.py  
+spark-submit spark_pyspark/q12_author_influence.py  
+
+--------------------------------------------------
+
+## Report
+All screenshots, observations, explanations, and results are provided in:
+
+M25CSA035_CSL7110_Assignment.pdf
+
+--------------------------------------------------
 
 ## Notes
-
-All results and observations are included in the submitted PDF report.
+The dataset used for processing (Project Gutenberg books) is not included in the repository due to large size. It should be configured locally before execution.
